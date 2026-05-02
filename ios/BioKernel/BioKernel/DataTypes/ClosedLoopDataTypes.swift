@@ -87,13 +87,14 @@ public extension LoopOutcome {
 
 /// Per-tick candidates the dose selector chose between. Both forms (temp basal,
 /// microBolus) are computed every tick; only one fires based on settings.
-/// `mlTempBasal` is post-safety (what would actually be delivered), not the raw
-/// ML model output. `mlMicroBolus` is derived from `mlTempBasal` via the bolus policy.
+/// `mlTempBasal` is the model's recommendation post-guardrail-clamp but pre-safety-budget,
+/// i.e. what ML wanted to dose. `mlMicroBolus` is derived from `mlTempBasal` via the bolus
+/// policy. Both fields are display-only — they never feed the dose selector or pump.
 public struct DoseCandidates: Codable {
     let physiologicalTempBasal: Double      // U/hr
-    let mlTempBasal: Double                 // U/hr — post-safety candidate
+    let mlTempBasal: Double                 // U/hr — what ML wanted, pre-safety-budget
     let physiologicalMicroBolus: Double     // U
-    let mlMicroBolus: Double                // U
+    let mlMicroBolus: Double                // U - what ML wanted, pre-safety-budget
 }
 
 public extension DoseCandidates {
@@ -341,6 +342,9 @@ struct DosingPipeline {
         // that temp basal for micro bolus calculations, or you can use the physiological temp basal
         let microBolusSafety = microBolusPolicy.amount(tempBasal: safetyTempBasal, settings: settings, glucoseInMgDl: glucoseInMgDl, targetGlucoseInMgDl: targetGlucoseInMgDl, at: at, lastMicroBolus: inputs.lastMicroBolus, roundToSupportedBolusVolume: inputs.roundToSupportedBolusVolume) ?? 0.0
         let microBolusPhysiological = microBolusPolicy.amount(tempBasal: physiologicalTempBasal, settings: settings, glucoseInMgDl: glucoseInMgDl, targetGlucoseInMgDl: targetGlucoseInMgDl, at: at, lastMicroBolus: inputs.lastMicroBolus, roundToSupportedBolusVolume: inputs.roundToSupportedBolusVolume) ?? 0.0
+        // Display-only: what the bolus policy would produce from the raw ML temp basal.
+        // Not fed to the dose selector or pump — the IMPORTANT rule above still holds.
+        let microBolusMl = microBolusPolicy.amount(tempBasal: mlTempBasal, settings: settings, glucoseInMgDl: glucoseInMgDl, targetGlucoseInMgDl: targetGlucoseInMgDl, at: at, lastMicroBolus: inputs.lastMicroBolus, roundToSupportedBolusVolume: inputs.roundToSupportedBolusVolume) ?? 0.0
         let biologicalInvariant = await physiological.deltaGlucoseError(settings: settings, dataFrame: dataFrame, at: at)
 
         let decision = DoseSelector.decide(
@@ -354,9 +358,9 @@ struct DosingPipeline {
 
         let candidates = DoseCandidates(
             physiologicalTempBasal: physiologicalTempBasal,
-            mlTempBasal: safetyTempBasal,
+            mlTempBasal: mlTempBasal,
             physiologicalMicroBolus: microBolusPhysiological,
-            mlMicroBolus: microBolusSafety
+            mlMicroBolus: microBolusMl
         )
 
         let addedGlucose = dataFrame?.addedGlucosePerHour30m(insulinSensitivity: insulinSensitivity) ?? 0
