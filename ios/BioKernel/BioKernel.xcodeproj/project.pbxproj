@@ -38,6 +38,8 @@
 		3B4CFE212C223DD200BDB1CB /* ShareClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7C6D912B083A440030DFA7 /* ShareClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4CFE222C223DD900BDB1CB /* ShareClientUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7C6D942B083A4C0030DFA7 /* ShareClientUI.framework */; };
 		3B4CFE232C223DD900BDB1CB /* ShareClientUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B7C6D942B083A4C0030DFA7 /* ShareClientUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3BCAFEDA0000000000000002 /* NightscoutRemoteCGM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCAFEDA0000000000000001 /* NightscoutRemoteCGM.framework */; };
+		3BCAFEDA0000000000000003 /* NightscoutRemoteCGM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCAFEDA0000000000000001 /* NightscoutRemoteCGM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B5076392F92F77400E5D3A6 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5076382F92F77400E5D3A6 /* PushNotificationService.swift */; };
 		3B50774C2F93DAB800E5D3A6 /* DosingDecisionTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B50774B2F93DAB800E5D3A6 /* DosingDecisionTestHelpers.swift */; };
 		3B5329502B5D8451000DED1A /* AddedGlucoseDataFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53294F2B5D8451000DED1A /* AddedGlucoseDataFrame.swift */; };
@@ -190,6 +192,7 @@
 				3C07C8902AF9625A008F604C /* OmniBLE.framework in Embed Frameworks */,
 				3C62EF662B218313001A4EF3 /* G7SensorKit.framework in Embed Frameworks */,
 				3B4CFE212C223DD200BDB1CB /* ShareClient.framework in Embed Frameworks */,
+				3BCAFEDA0000000000000003 /* NightscoutRemoteCGM.framework in Embed Frameworks */,
 				3B709AB32AF49377004E5885 /* MockKit.framework in Embed Frameworks */,
 				3C21A5AE2B16755D00AC6D51 /* SwiftCharts in Embed Frameworks */,
 				3B4CFE1D2C223B8900BDB1CB /* CGMBLEKit.framework in Embed Frameworks */,
@@ -273,6 +276,7 @@
 		3B7A68EF2BE208BE0095235C /* iob_bug.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iob_bug.json; sourceTree = "<group>"; };
 		3B7C6D912B083A440030DFA7 /* ShareClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShareClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7C6D942B083A4C0030DFA7 /* ShareClientUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ShareClientUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BCAFEDA0000000000000001 /* NightscoutRemoteCGM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NightscoutRemoteCGM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7C6D9B2B0C09320030DFA7 /* InsulinStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulinStorageTests.swift; sourceTree = "<group>"; };
 		3B7F08402B2DDE33002930A4 /* ClosedLoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedLoopTests.swift; sourceTree = "<group>"; };
 		3B7F08612B31590D002930A4 /* BolusProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolusProgressView.swift; sourceTree = "<group>"; };
@@ -377,6 +381,7 @@
 				3B4CFE1E2C223B9300BDB1CB /* CGMBLEKitUI.framework in Frameworks */,
 				3C07C88F2AF9625A008F604C /* OmniBLE.framework in Frameworks */,
 				3B4CFE202C223DD200BDB1CB /* ShareClient.framework in Frameworks */,
+				3BCAFEDA0000000000000002 /* NightscoutRemoteCGM.framework in Frameworks */,
 				3C62EF652B218313001A4EF3 /* G7SensorKit.framework in Frameworks */,
 				3B4CFE1C2C223B8900BDB1CB /* CGMBLEKit.framework in Frameworks */,
 				3C21A5AD2B16753800AC6D51 /* SwiftCharts in Frameworks */,
@@ -493,6 +498,7 @@
 				3BBC7C752B15620200410123 /* LoopTestingKit.framework */,
 				3B7C6D942B083A4C0030DFA7 /* ShareClientUI.framework */,
 				3B7C6D912B083A440030DFA7 /* ShareClient.framework */,
+				3BCAFEDA0000000000000001 /* NightscoutRemoteCGM.framework */,
 				3C07C8972AF964E4008F604C /* MKRingProgressView.framework */,
 				3C07C88E2AF9625A008F604C /* OmniBLE.framework */,
 				3B709AB42AF4937B004E5885 /* MockKitUI.framework */,

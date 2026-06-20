@@ -19,4 +19,7 @@
    <FileRef
       location = "group:OmniBLE/OmniBLE.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:NightscoutRemoteCGM/NightscoutRemoteCGM.xcodeproj">
+   </FileRef>
 </Workspace>

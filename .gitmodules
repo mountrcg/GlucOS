@@ -13,3 +13,7 @@
 [submodule "ios/dexcom-share-client-swift"]
 	path = ios/dexcom-share-client-swift
 	url = https://github.com/loopandlearn/dexcom-share-client-swift.git
+[submodule "ios/NightscoutRemoteCGM"]
+	path = ios/NightscoutRemoteCGM
+	url = https://github.com/LoopKit/NightscoutRemoteCGM.git
+	branch = dev
