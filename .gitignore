@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Xcode — user state
+**/xcuserdata/
+*.xcuserstate
+*.xcuserdatad
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+
+# Xcode — build artifacts
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+*.o
+*.lo
+*.la
+*.al
+*.slo
+
+# Swift Package Manager
+.swiftpm/xcode/xcuserdata/
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.build/
+
+# CocoaPods (leave Podfile.lock + Pods committed if you use them — uncomment if not)
+# Pods/
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Coverage / profiling
+*.profraw
+*.profdata
+*.gcda
+*.gcno
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local AI tooling state
+.claude/
+
+# Project-specific: per-developer signing/bundle overrides for the xcconfig pair
+ios/BioKernel/ConfigOverride.xcconfig
