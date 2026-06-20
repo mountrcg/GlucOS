@@ -76,7 +76,7 @@ final class AppComposition {
         let observableState = AppObservableState()
         let healthKitStorage = LocalHealthKitStorage(storedObjectFactory: storedObjectFactory)
         let targetGlucoseService = LocalTargetGlucoseService()
-        let machineLearning = AIDosing()
+        let machineLearning = DNNDosing()
         let pushNotificationService = LocalPushNotificationService()
 
         // Tier 1 — only Tier 0 deps

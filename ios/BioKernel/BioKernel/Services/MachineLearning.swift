@@ -104,7 +104,7 @@ actor DNNDosing: MachineLearning {
         // For now we will always return nil for ML, the current model is highly
         // personalized for one individual and not appropriate for use in general.
         // But, it shows what we used when we ran experiments.
-        return nil
+        // return nil
         
         let targetGlucose = targetGlucoseInMgDl
         let insulinSensitivity = settings.learnedInsulinSensitivity(at: at)
